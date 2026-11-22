@@ -71,7 +71,6 @@ def registration(request):
         data = {"userName": username, "error": "Already Registered"}
         return JsonResponse(data)
 
-        
 
 # Get the list of cars (populate the database first if empty)
 def get_cars(request):
@@ -85,7 +84,7 @@ def get_cars(request):
         cars.append({"CarModel": car_model.name,
                      "CarMake": car_model.car_make.name})
     return JsonResponse({"CarModels": cars})
-    
+
 
 # Get all dealerships, or dealerships in one state
 def get_dealerships(request, state="All"):
